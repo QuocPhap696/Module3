@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 @WebServlet(name = "TranslateServlet", urlPatterns = "/translate")
-public class simple_dictionary extends HttpServlet {
+public class dictionary extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Map<String, String> dictionary = new HashMap<>();
@@ -32,8 +32,8 @@ public class simple_dictionary extends HttpServlet {
         } else {
             writer.println("Not found");
         }
-
-        RequestDispatcher requestDispatcher =  req.getRequestDispatcher("/WEB-INF/index.jsp");
+        req.setAttribute("rs", result);
+        RequestDispatcher requestDispatcher =  req.getRequestDispatcher("/index.jsp");
         requestDispatcher.forward(req, resp);
     }
 

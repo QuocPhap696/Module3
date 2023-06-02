@@ -11,9 +11,10 @@
     Vietnam Dictionary
 </h2>
 
-<form action="/translate" method="post">
+<form action="/translate" method="get">
     <input type="text" name="txtSearch" placeholder="Enter your word: "/>
     <input type = "submit" id = "submit" value = "Search"/>
+    ${rs}
 </form>
 </body>
 </html>
